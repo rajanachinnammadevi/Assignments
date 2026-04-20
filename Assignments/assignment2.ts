@@ -4,29 +4,25 @@
 // o If the credit score is between 650 and 750, additional checks are performed.
 // o If the credit score is below 650, the loan is denied.
 // Create common function and then based on below details, print whether user is eligible to get the loan or not
-let customerName: string = "John Doe";
-let creditScore: number = 680;
+let customerName: string = "Devi Rajana";
+let creditScore: number = 700;
 let income: number = 55000.0;
 let isEmployed: boolean = true;
 let debtToIncomeRatio: number = 35.0;
 if (creditScore > 750){
-    console.log("The loan is automatically approved");
-}else if(creditScore <= 750 && creditScore > 650){
+    console.log(`The loan is automatically approved for ${customerName}`);
+}else if(creditScore > 650 && creditScore <= 750){
        if(income >= 50000.0){
-         if(isEmployed == true){
-            if(debtToIncomeRatio < 40){
-              console.log("The loan is approved")
-            }else{
-                console.log("The loan is denied")
-            }
+         if(isEmployed == true && debtToIncomeRatio < 40){
+            console.log(`The loan is approved for ${customerName}`);
          }else{
-            console.log("The loan is denied")
+            console.log(`The loan is denied for ${customerName}`);
          }
        }else {
-        console.log("The loan is denied")
+        console.log(`The loan is denied for ${customerName}`);
        }
 }else if(creditScore < 650){
-    console.log("The loan is automatically denied")
+    console.log(`The loan is automatically denied for ${customerName}`);
 }
 
 
